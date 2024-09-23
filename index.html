@@ -5,10 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style/style.css">
+  <link rel="shortcut icon" href="./assets/coin.png" type="image/x-icon">
   <title>Donate-Bangladesh</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 </head>
 <!-- custom TailwindCSS colors section -->
@@ -21,6 +24,7 @@
           primaryHoverColor: "#95c950",
           colors: "#111111",
           bgColor: "#F9F7F3",
+          navColor: 'rgb(249, 247, 243)',
         },
       },
     },
@@ -28,6 +32,56 @@
 </script>
 
 <body>
+
+  <header class="sm:max-w-[1440px] w-full sm:w-full mx-auto sm:mx-auto  scroll-smooth sticky top-0  Z-10  backdrop-filter backdrop-blur-lg ">
+
+    <nav class=" bg-bgColor pt-5 pb-16">
+      <div class="flex items-center justify-between sm:m-2">
+
+        <button class="btn bg-primaryColor hidden sm:block px-6 hover:bg-primaryHoverColor text-colors text-xl" id="donationButton">
+          Blog
+        </button>
+
+        <div class="flex items-center  gap-2  ">
+          <img src="./assets/logo.png" alt="logo">
+          <p class="font-extrabold text-2xl">
+            <span class="hidden sm:block">Donate Bangladesh</span>
+          </p>
+        </div>
+
+        <div class="flex items-center gap-2  ">
+          <img src="./assets/coin.png" alt="coin-logo">
+          <a class="text-xl font-semibold text-color opacity-75"><span id="balance">9500</span> BDT</a>
+        </div>
+
+
+        <div id="menu" class="font-extrabold text-4xl cursor-pointer sm:hidden ">
+          <ion-icon name="menu-outline"></ion-icon>
+        </div>
+
+      </div>
+      <div id="menu-item" class="hidden flex-col ">
+        <ul
+          class="menu bg-primaryColor w-96 p-0 [&_li>*]:rounded-none hover:bg-primaryHoverColor ml-[50%] mt-2 rounded-sm">
+          <li><a>Blog</a></li>
+          <li><a>Item 2</a></li>
+          <li><a>Item 3</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="flex flex-row justify-center space-x-4 items-center mt-16 pb-6">
+
+      <button class="btn bg-primaryColor px-6 hover:bg-primaryHoverColor text-colors text-xl" id="donationButton">
+        Donation
+      </button>
+
+      <button class="btn btn-outline px-6 text-colors text-xl" id="historyButton">
+        History
+      </button>
+
+    </div>
+  </header>
 
 
 
