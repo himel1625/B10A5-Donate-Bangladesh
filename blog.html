@@ -1,23 +1,193 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style/style.css">
-  <title>Blog-Home-page</title>
+  <link rel="shortcut icon" href="./assets/coin.png" type="image/x-icon">
+  <title>Blog-Home-page </title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
 </head>
+<!-- custom TailwindCSS colors section -->
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          primaryColor: "#B4F461",
+          primaryHoverColor: "#95c950",
+          colors: "#111111",
+          bgColor: "#F9F7F3",
+          navColor: 'rgb(249, 247, 243)',
+        },
+      },
+    },
+  };
+</script>
 
 <body>
 
+  <header
+    class="sm:max-w-[1440px] w-full sm:w-full mx-auto sm:mx-auto  scroll-smooth sticky top-0  Z-10  backdrop-filter backdrop-blur-lg ">
+
+    <nav id="page" class="bg-bgColor pt-5 pb-16">
+      <div class="flex items-center justify-between m-2 sm:m-2">
+
+        <a href="./index.html"
+          class="btn bg-primaryColor hidden sm:block px-6 hover:bg-primaryHoverColor text-colors text-xl p-3"
+          id="donationButton">
+          Home
+          <a />
+
+          <div class="flex items-center  gap-2  ">
+            <img src="./assets/logo.png" alt="logo">
+            <p class="font-extrabold text-2xl">
+              <span class="hidden sm:block">Donate Bangladesh</span>
+            </p>
+          </div>
+
+          <div class="flex items-center gap-2  ">
+            <img src="./assets/coin.png" alt="coin-logo">
+            <a class="text-xl font-semibold text-color opacity-75"><span id="balance">9500</span> BDT</a>
+          </div>
 
 
+          <div id="menu" class="font-extrabold text-4xl cursor-pointer sm:hidden ">
+            <ion-icon name="menu-outline"></ion-icon>
+          </div>
 
+      </div>
+      <div id="menu-item" class="hidden flex-col ">
+        <ul class="menu bg-primaryColor  hover:bg-primaryHoverColor ml-[50%] mt-2  w-96 rounded-xl">
+          <li><a href="./blog.html">Blog</a></li>
+          <li><a href="./index.html">Home</a></li>
+        </ul>
+      </div>
 
-  <script src="./script/app.js"></script>
+    </nav>
+
+    <div class="flex flex-row justify-center space-x-4 items-center mt-16 pb-6">
+
+      <button id="donationButton" class="btn bg-primaryColor px-6 hover:bg-primaryHoverColor text-colors text-xl">
+        Donation
+      </button>
+
+      <button id="historyButton" class="btn btn-outline px-6 text-colors text-xl">
+        History
+      </button>
+
+    </div>
+  </header>
+
+  <main class="container space-y-5 mx-auto mt-20 lg:px-0 px-3">
+    <h1 class="text-3xl font-bold">Important FAQ</h1>
+    <section class="join join-vertical w-full">
+      <div class="collapse collapse-arrow join-item border-base-300 border">
+        <input type="radio" name="my-accordion-4" checked="checked" />
+        <div class="collapse-title text-xl font-medium">
+          What is the Document Object Model (DOM)?
+        </div>
+        <div class="collapse-content">
+          <p>
+            The Document Object Model (DOM) is a programming interface for web
+            documents. It represents the structure of a web page as a
+            hierarchical tree of objects, where each element, attribute, and
+            piece of content is a node. Through the DOM, programming languages
+            like JavaScript can interact with and manipulate the content,
+            structure, and styles of a web page dynamically, enabling actions
+            such as updating text, modifying attributes, handling user events,
+            or changing the layout. The DOM provides a way for web pages to be
+            interactive and dynamic.
+          </p>
+        </div>
+      </div>
+      <div class="collapse collapse-arrow join-item border-base-300 border">
+        <input type="radio" name="my-accordion-4" />
+        <div class="collapse-title text-xl font-medium">
+          How do you select an element from the DOM?
+        </div>
+        <div class="collapse-content">
+          <ul>
+            <li>
+              By ID: Use a method that retrieves an element based on its
+              unique ID.
+            </li>
+            <li>
+              By Class: Use a method that selects all elements with a specific
+              class name.
+            </li>
+            <li>
+              By Tag Name: Use a method that selects all elements with a
+              specific tag name
+            </li>
+            <li>
+              By CSS Selectors: Use methods that allow selecting elements
+              using CSS selectors (e.g., class, id, attributes,
+              pseudo-classes).
+            </li>
+            <li>
+              By Name: For form elements, select based on their name
+              attribute.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="collapse collapse-arrow join-item border-base-300 border">
+        <input type="radio" name="my-accordion-4" />
+        <div class="collapse-title text-xl font-medium">
+          What is event delegation in the context of the DOM, and why is it
+          useful?
+        </div>
+        <div class="collapse-content">
+          <ul>
+            <li>
+              Efficiency: Reduces the need to attach multiple event listeners
+              to individual child elements, improving performance, especially
+              with dynamic or large lists of elements.
+            </li>
+            <li>
+              Dynamic Elements: Works well for elements added to the DOM
+              dynamically after the page has loaded, as the parent listener
+              can still handle events from newly created children.
+            </li>
+            <li>
+              Simpler Code: Centralizes event handling, reducing code
+              complexity by avoiding multiple event handlers.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="collapse collapse-arrow join-item border-base-300 border">
+        <input type="radio" name="my-accordion-4" />
+        <div class="collapse-title text-xl font-medium">
+          How do you manipulate an element's attributes and styles using the
+          DOM?
+        </div>
+        <div class="collapse-content">
+          <ul>
+            <li>
+              Get an attribute using a method that retrieves it by name.
+            </li>
+            <li>
+              Set an attribute by specifying the attribute name and value.
+            </li>
+            <li>
+              Remove an attribute using a method that takes the attribute name
+              as a parameter.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+<script src="./script/utility.js"></script>
 </body>
 
 </html>

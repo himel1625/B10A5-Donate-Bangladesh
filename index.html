@@ -12,8 +12,8 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
 </head>
+
 <!-- custom TailwindCSS colors section -->
 <script>
   tailwind.config = {
@@ -37,55 +37,62 @@
     class="sm:max-w-[1440px] w-full sm:w-full mx-auto sm:mx-auto  scroll-smooth sticky top-0  Z-10  backdrop-filter backdrop-blur-lg ">
 
     <nav class=" bg-bgColor pt-5 pb-16">
-      <div class="flex items-center justify-between sm:m-2">
+      <div class="flex items-center justify-between m-2 sm:m-2">
 
-        <button class="btn bg-primaryColor hidden sm:block px-6 hover:bg-primaryHoverColor text-colors text-xl"
-          id="donationButton">
+        <a href='./blog.html'
+          class="btn bg-primaryColor hidden  sm:block px-6  hover:bg-primaryHoverColor text-colors text-xl  p-3 ">
           Blog
-        </button>
+          <a />
 
-        <div class="flex items-center  gap-2  ">
-          <img src="./assets/logo.png" alt="logo">
-          <p class="font-extrabold text-2xl">
-            <span class="hidden sm:block">Donate Bangladesh</span>
-          </p>
-        </div>
+          <div class="flex items-center  gap-2  ">
+            <img src="./assets/logo.png" alt="logo">
+            <p class="font-extrabold text-2xl">
+              <span class="hidden sm:block">Donate Bangladesh</span>
+            </p>
+          </div>
 
-        <div class="flex items-center gap-2  ">
-          <img src="./assets/coin.png" alt="coin-logo">
-          <a class="text-xl font-semibold text-color opacity-75"><span id="balance">9500</span> BDT</a>
-        </div>
+          <div class="flex items-center gap-2  ">
+            <img src="./assets/coin.png" alt="coin-logo">
+            <a class="text-xl font-semibold text-color opacity-75"><span id="balance">50000</span> BDT</a>
+          </div>
 
-
-        <div id="menu" class="font-extrabold text-4xl cursor-pointer sm:hidden ">
-          <ion-icon name="menu-outline"></ion-icon>
-        </div>
+          <div id="menu" class="font-extrabold text-4xl cursor-pointer sm:hidden ">
+            <ion-icon name="menu-outline"></ion-icon>
+          </div>
 
       </div>
+
       <div id="menu-item" class="hidden flex-col ">
-        <ul
-          class="menu bg-primaryColor w-96 p-0 [&_li>*]:rounded-none hover:bg-primaryHoverColor ml-[50%] mt-2 rounded-sm">
-          <li><a>Blog</a></li>
-          <li><a>Item 2</a></li>
-          <li><a>Item 3</a></li>
+        <ul class="menu bg-primaryColor  hover:bg-primaryHoverColor ml-[50%] mt-2  w-96 rounded-xl">
+          <li><a href="./blog.html">Blog</a></li>
+          <li><a href="./index.html">Home</a></li>
         </ul>
       </div>
+
     </nav>
 
     <div class="flex flex-row justify-center space-x-4 items-center mt-16 pb-6">
 
-      <button class="btn bg-primaryColor px-6 hover:bg-primaryHoverColor text-colors text-xl" id="donationButton">
+      <button id="donationButton" class="btn bg-primaryColor px-6 hover:bg-primaryHoverColor text-colors text-xl">
         Donation
       </button>
 
-      <button class="btn btn-outline px-6 text-colors text-xl" id="historyButton">
+      <button id="historyButton" class="btn btn-outline px-6 text-colors text-xl">
         History
       </button>
 
     </div>
   </header>
 
-  <main class="container mx-auto  mt-20 sm:px-0 px-3">
+
+
+
+  <main id="main-container" class=" container mx-auto  mt-20 sm:px-0 px-3">
+
+
+    <!-- <section id="histry" class="bg-bgColor pt-5 pb-16">
+
+    </section> -->
 
     <section id="cardContainer">
       <!-- card 01 -->
@@ -97,7 +104,7 @@
           </figure>
 
           <div class="sm:w-[750px] space-y-4">
-            <button class="btn text-gray-500 lg:mt-0 mt-4">
+            <button id="donet" class="btn text-gray-500 lg:mt-0 mt-4">
               <img src="./assets/coin.png" class="lg:w-7" alt="" />
               <span id="displayDonateAmount1">0</span> BDT
             </button>
@@ -114,8 +121,8 @@
               join us in supporting the relief efforts and making a positive impact on the lives of those in need.
             </p>
 
-            <input type="text" placeholder="Write Donation Amount" class="input input-bordered w-full"
-              id="inputAmount1" />
+            <input id="input1" type="text" placeholder="Write Donation Amount" class="input input-bordered w-full" />
+
             <div class="card-actions">
               <button class="btn bg-primaryColor text-xl hover:bg-primaryHoverColor w-full" id="donateBtn1">
                 Donate Now
@@ -140,10 +147,10 @@
           <div class="sm:w-[750px] space-y-4">
             <button class="btn text-gray-500 lg:mt-0 mt-4">
               <img src="./assets/coin.png" class="sm:w-7" alt="" />
-              <span id="displayDonateAmount1">0</span> BDT
+              <span id="displayDonateAmount2">0</span> BDT
             </button>
 
-            <h2 class="card-title font-bold" id="donateTitle1">
+            <h2 class="card-title font-bold" id="donateTitle2">
               Donate for Flood Relief in Feni,Bangladesh
             </h2>
 
@@ -156,13 +163,12 @@
               Every
               contribution counts towards making a real difference. Please consider donating today to assist those in
               urgent need.
-
             </p>
 
-            <input type="text" placeholder="Write Donation Amount" class="input input-bordered w-full"
-              id="inputAmount1" />
+            <input id="input2" type="text" placeholder="Write Donation Amount" class="input input-bordered w-full" />
+
             <div class="card-actions">
-              <button class="btn bg-primaryColor text-xl hover:bg-primaryHoverColor w-full" id="donateBtn1">
+              <button class="btn bg-primaryColor text-xl hover:bg-primaryHoverColor w-full" id="donateBtn2">
                 Donate Now
               </button>
             </div>
@@ -185,10 +191,10 @@
           <div class="sm:w-[750px] space-y-4">
             <button class="btn text-gray-500 lg:mt-0 mt-4">
               <img src="./assets/coin.png" class="lg:w-7" alt="" />
-              <span id="displayDonateAmount1">0</span> BDT
+              <span id="displayDonateAmount3">0</span> BDT
             </button>
 
-            <h2 class="card-title font-bold" id="donateTitle1">
+            <h2 class="card-title font-bold" id="donateTitle3">
               DAid for Injured in the Quota Movement
             </h2>
 
@@ -204,10 +210,10 @@
               donation to support these brave individuals in their time of need.
             </p>
 
-            <input type="text" placeholder="Write Donation Amount" class="input input-bordered w-full"
-              id="inputAmount1" />
+              <input id="input3" type="text" placeholder="Write Donation Amount" class="input input-bordered w-full" />
+
             <div class="card-actions">
-              <button class="btn bg-primaryColor text-xl hover:bg-primaryHoverColor w-full" id="donateBtn1">
+              <button class="btn bg-primaryColor text-xl hover:bg-primaryHoverColor w-full" id="donateBtn3">
                 Donate Now
               </button>
             </div>
@@ -217,16 +223,11 @@
       </div>
     </section>
 
-    <!-- Donate History section -->
-    <!-- <section id="donateHistory" class="space-y-4 hidden"></section> -->
   </main>
-
 
   <footer class="mt-20 pt-36 bg-bgColor sticky top-[100vh]"></footer>
 
-  
-
-  <section id="successModal" class="modal modal-bottom sm:modal-middle flex justify-center items-center text-center">
+  <dialog id="successModal" class="modal modal-bottom sm:modal-middle flex justify-center items-center text-center">
     <div class="modal-box">
       <h3 class="text-3xl font-bold">Congratulations!</h3>
       <div class="flex justify-center items-center mt-4 mb-4">
@@ -238,10 +239,10 @@
         <button class="btn font-bold">Close Confirmation</button>
       </form>
     </div>
-  </section>
+    <dialog/>
 
-
-  <script src="./script/app.js"></script>
+    <script src="./script/app.js"></script>
+    <script src="./script/utility.js"></script>
 </body>
 
 </html>
