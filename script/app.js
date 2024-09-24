@@ -29,41 +29,37 @@ const inputAmount1 = document.getElementById('input1');
 const inputAmount2 = document.getElementById('input2');
 const inputAmount3 = document.getElementById('input3');
 
-const mainBalance = document.getElementById('balance');
-let finalBalance = parseFloat(mainBalance.innerText);
+const mainBalanceElement = document.getElementById('balance');
+let mainBalance = parseFloat(mainBalanceElement.innerText);
 
-function myFuc() {
-  if (!isNaN(inputValue) || inputValue <= 0 ) {
-    alert('Please Enter a valid donation Amount.');
+const donation = (inputAmount, displayElement) => {
+  const inputValue = parseFloat(inputAmount.value);
+
+  if (isNaN(inputValue) || inputValue <= 0) {
+    alert('Please enter a valid donation amount.');
+    return;
+  } else if (inputValue > mainBalance) {
+    alert('Donation amount exceeds the main balance.');
     return;
   }
-  if (inputValue > finalBalance) {
-    alert('Do-not have Enough money');
-    return;
-  }
-  let Balance = finalBalance - inputValue;
-  mainBalance.innerText = Balance.toFixed(2);
-  return myFuc();
-}
-
+  
+  let final = mainBalance - inputValue;
+  mainBalanceElement.innerText = final.toFixed(2);
+  displayElement.innerText = inputValue.toFixed(2);
+};
 donateBtn1.addEventListener('click', () => {
-  const inputValue = parseFloat(inputAmount1.value);
   const displayDonateAmount1 = document.getElementById('displayDonateAmount1');
-  displayDonateAmount1.innerText = inputValue.toFixed(2);
-  myFuc();
+  donation(inputAmount1, displayDonateAmount1);
 });
 
 donateBtn2.addEventListener('click', () => {
-  const inputValue = parseFloat(inputAmount2.value);
   const displayDonateAmount2 = document.getElementById('displayDonateAmount2');
-  displayDonateAmount2.innerText = inputValue.toFixed(2);
-  myFuc();
+  donation(inputAmount2, displayDonateAmount2);
 });
+
 donateBtn3.addEventListener('click', () => {
-  const inputValue = parseFloat(inputAmount3.value);
   const displayDonateAmount3 = document.getElementById('displayDonateAmount3');
-  displayDonateAmount3.innerText = inputValue.toFixed(2);
-  myFuc();
+  donation(inputAmount3, displayDonateAmount3);
 });
 
 const donateButtons = [donateBtn1, donateBtn2, donateBtn3];
