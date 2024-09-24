@@ -22,8 +22,8 @@ historyButton.addEventListener('click', () => {
     history.classList.add('hidden');
     donationButton.classList.add('bg-primaryColor');
     historyButton.classList.remove('bg-primaryColor');
-    mainContainer.classList.remove('hidden');
     donateHistory.classList.remove('hidden');
+    mainContainer.classList.remove('hidden');
   });
 });
 
@@ -37,7 +37,7 @@ function donationHistory(donateAmount, donateTitle) {
   const historyContainer = document.getElementById('history-container');
   const card = document.createElement('div');
   card.className =
-    '  border border-gey-500 m-auto sm:m-auto w-[85%]  rounded-lg';
+    '  border border-gey-500 m-auto sm:m-auto w-[95%]  rounded-lg';
   card.innerHTML = `
   <div class="flex items-start justify-center flex-col h-32 mx-4">
   <h1 class="font-extrabold text-xl">${donateAmount} Taka is donate for ${donateTitle}</h1>
@@ -54,12 +54,15 @@ let donateBtn3 = document.getElementById('donateBtn3');
 let inputAmount1 = document.getElementById('input1');
 let inputAmount2 = document.getElementById('input2');
 let inputAmount3 = document.getElementById('input3');
-
+const displayDonateAmount1 = document.getElementById('displayDonateAmount1');
+const displayDonateAmount2 = document.getElementById('displayDonateAmount2');
+const displayDonateAmount3 = document.getElementById('displayDonateAmount3');
 //main balance
+
 const mainBalanceElement = document.getElementById('balance');
 let mainBalance = parseFloat(mainBalanceElement.innerText);
-
 //donation calculation
+
 const donation = (inputAmount, totalDonation, donateBtnId) => {
   const inputValue = parseFloat(inputAmount.value);
   if (isNaN(inputValue) || inputValue <= 0) {
@@ -69,47 +72,39 @@ const donation = (inputAmount, totalDonation, donateBtnId) => {
     alert('Donation amount exceeds the main balance.');
     return;
   } else {
+    //main balance
     let finalBalance = mainBalance - inputValue;
     mainBalanceElement.innerText = finalBalance.toFixed(2);
-    totalDonation.innerText = inputValue.toFixed(2);
-    //donation history function implement
-    if (donateBtnId.id === 'donateBtn1') {
-      donationHistory(inputValue, donateTitle1);
-    } else if (donateBtnId.id === 'donateBtn2') {
-      donationHistory(inputValue, donateTitle2);
-    } else if (donateBtnId.id === 'donateBtn3') {
-      donationHistory(inputValue, donateTitle3);
+    //total donation
+    const previousDonation = parseFloat(totalDonation.innerText);
+    totalDonation.innerText = (previousDonation + inputValue).toFixed(2);
+    // Donation history function implementation using ternary operator
+    const title =
+      donateBtnId.id === 'donateBtn1'
+        ? donateTitle1
+        : donateBtnId.id === 'donateBtn2'
+        ? donateTitle2
+        : donateBtnId.id === 'donateBtn3'
+        ? donateTitle3
+        : null;
+    if (title) {
+      donationHistory(inputValue, title);
     }
     inputAmount.value = '';
-    return;
+    successModal.showModal();
   }
+  return;
 };
 
 //for donation 1
 donateBtn1.addEventListener('click', () => {
-  const displayDonateAmount1 = document.getElementById('displayDonateAmount1');
   donation(inputAmount1, displayDonateAmount1, donateBtn1);
 });
-
 //for donation 2
 donateBtn2.addEventListener('click', () => {
-  const displayDonateAmount2 = document.getElementById('displayDonateAmount2');
   donation(inputAmount2, displayDonateAmount2, donateBtn2);
 });
-
 //for donation 3
 donateBtn3.addEventListener('click', () => {
-  const displayDonateAmount3 = document.getElementById('displayDonateAmount3');
   donation(inputAmount3, displayDonateAmount3, donateBtn3);
 });
-//modal functionalities
-function setButton() {
-  const donateButtons = [donateBtn1, donateBtn2, donateBtn3];
-  for (const button of donateButtons) {
-    button.addEventListener('click', () => {
-      successModal.showModal();
-    });
-  }
-  return;
-}
-setButton();
