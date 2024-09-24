@@ -22,8 +22,8 @@ historyButton.addEventListener('click', () => {
     history.classList.add('hidden');
     donationButton.classList.add('bg-primaryColor');
     historyButton.classList.remove('bg-primaryColor');
-    donateHistory.classList.remove('hidden');
     mainContainer.classList.remove('hidden');
+    donateHistory.classList.remove('hidden');
   });
 });
 
