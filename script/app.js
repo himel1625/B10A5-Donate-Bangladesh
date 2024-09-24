@@ -42,9 +42,8 @@ const donation = (inputAmount, displayElement) => {
     alert('Donation amount exceeds the main balance.');
     return;
   }
-  
-  let final = mainBalance - inputValue;
-  mainBalanceElement.innerText = final.toFixed(2);
+  let finalBalance = mainBalance - inputValue;
+  mainBalanceElement.innerText = finalBalance.toFixed(2);
   displayElement.innerText = inputValue.toFixed(2);
 };
 donateBtn1.addEventListener('click', () => {
