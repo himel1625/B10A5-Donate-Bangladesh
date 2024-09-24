@@ -5,4 +5,3 @@ menu.addEventListener('click', function () {
   menuItem.classList.toggle('hidden');
 });
 
-

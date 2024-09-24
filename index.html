@@ -32,10 +32,10 @@
 </script>
 
 <body>
-
+<!-- Header section -->
   <header
     class="sm:max-w-[1440px] w-full sm:w-full mx-auto sm:mx-auto  scroll-smooth sticky top-0  Z-10  backdrop-filter backdrop-blur-lg ">
-
+    <!-- nav section -->
     <nav class=" bg-bgColor pt-5 pb-16">
       <div class="flex items-center justify-between m-2 sm:m-2">
 
@@ -53,44 +53,39 @@
 
           <div class="flex items-center gap-2  ">
             <img src="./assets/coin.png" alt="coin-logo">
-            <a class="text-xl font-semibold text-color opacity-75"><span id="balance">50000</span> BDT</a>
+            <a class="text-xl font-semibold text-color opacity-75"><span id="balance">9500</span> BDT</a>
           </div>
 
           <div id="menu" class="font-extrabold text-4xl cursor-pointer sm:hidden ">
             <ion-icon name="menu-outline"></ion-icon>
           </div>
-
       </div>
-
       <div id="menu-item" class="hidden flex-col ">
         <ul class="menu bg-primaryColor  hover:bg-primaryHoverColor ml-[50%] mt-2  w-96 rounded-xl">
           <li><a href="./blog.html">Blog</a></li>
           <li><a href="./index.html">Home</a></li>
         </ul>
       </div>
-
     </nav>
-
+    <!-- Button section -->
     <div class="flex flex-row justify-center space-x-4 items-center mt-16 pb-6">
-
       <button id="donationButton" class="btn bg-primaryColor px-6 hover:bg-primaryHoverColor text-colors text-xl">
         Donation
       </button>
-
-      <button id="historyButton" class="btn btn-outline px-6 text-colors text-xl">
+      <button id="historyButton" class="btn  px-6 hover:bg-primaryHoverColor text-colors text-xl">
         History
       </button>
-
     </div>
   </header>
 
-  <main id="main-container" class=" container mx-auto  mt-20 sm:px-0 px-3">
+  <!-- History section -->
+  <section id="history" class="hidden  h-80 w-[99%] m-auto sm:m-auto ">
+    <div id="history-container" class="flex flex-col gap-5  items-center justify-center ">
+    </div>
+  </section>
 
-
-    <!-- <section id="histry" class="bg-bgColor pt-5 pb-16">
-
-    </section> -->
-
+  <!-- main section -->
+  <main id="main-container" class="container mx-auto  mt-20 sm:px-0 px-3">
     <section id="cardContainer">
       <!-- card 01 -->
       <div class="mt-8 border rounded-xl w-full sm:w-full sm:p-10 p-5">
@@ -106,7 +101,7 @@
               <span id="displayDonateAmount1">0</span> BDT
             </button>
 
-            <h2 class="card-title font-bold" id="donateTitle1">
+            <h2 id="donateTitle1" class="card-title font-bold">
               Donate for Flood at Noakhali, Bangladesh
             </h2>
 
@@ -131,7 +126,6 @@
       </div>
     </section>
 
-
     <section id="cardContainer">
       <!-- card 02 -->
       <div class="mt-8 border rounded-xl w-full sm:w-full sm:p-10 p-5">
@@ -147,7 +141,7 @@
               <span id="displayDonateAmount2">0</span> BDT
             </button>
 
-            <h2 class="card-title font-bold" id="donateTitle2">
+            <h2 id="donateTitle2" class="card-title font-bold">
               Donate for Flood Relief in Feni,Bangladesh
             </h2>
 
@@ -170,7 +164,6 @@
               </button>
             </div>
           </div>
-
         </div>
       </div>
     </section>
@@ -191,7 +184,7 @@
               <span id="displayDonateAmount3">0</span> BDT
             </button>
 
-            <h2 class="card-title font-bold" id="donateTitle3">
+            <h2 id="donateTitle3" class="card-title font-bold">
               DAid for Injured in the Quota Movement
             </h2>
 
@@ -219,14 +212,15 @@
         </div>
       </div>
     </section>
-
   </main>
 
-  <footer class="mt-20 pt-36 bg-bgColor sticky top-[100vh]"></footer>
+  <!-- footer section -->
+  <footer id="footer" class="mt-20 pt-36 bg-bgColor sticky top-[100vh]"></footer>
 
+  <!-- modal section -->
   <dialog id="successModal" class="modal modal-bottom sm:modal-middle flex justify-center items-center text-center">
     <div class="modal-box">
-      <h3 class="text-3xl font-bold">Congratulations!</h3>
+      <h3 class="text-3xl font-extrabold">Congratulations!</h3>
       <div class="flex justify-center items-center mt-4 mb-4">
         <img src="./assets/coin.png" class="w-9" alt="" />
       </div>
@@ -238,6 +232,8 @@
     </div>
     <dialog />
 
+
+    <!-- script file add section -->
     <script src="./script/app.js"></script>
     <script src="./script/utility.js"></script>
 </body>
